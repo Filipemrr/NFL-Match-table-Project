@@ -1,25 +1,49 @@
 * {
+  /* essa funcao dita regras universais para o codigo css
+  nesse caso eu igualei qualquer margem a 0 e qualquer padding a 0 tambem.*/
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 ul {
   list-style: none;
+  /*nessa parte eu tiro todo os pontos que vem por padrao 
+  no codigo html, nas funcoes de lista */
 }
 
 body {
+  /*body eh a funcao que esta toda a pagina
+  nesse caso uso ela para definir apenas as caracteristicas do fundo*/
   background-color: #121214;
   background-image: url(./assets/bg.svg);
   background-position-x: center;
   background-position-y: 55.6%;
 }
 #app {
-  width: fit-content; /* o tamanho da caixa eh proporcional ao conteudo que esta dentro dela.*/
+  /* essa eh a div com id "app". que eh a div
+  que contem todas as informacoes*/
+  width: fit-content;
   margin: 52px auto;
 }
-
 header {
+  /*contem a logo*/
   margin-bottom: 63px;
 }
-main {
-  border: 1px solid red;
+.card {
+  /*contem apenas o bloco das informacoes da partida
+  como dia hora e as bandeiras*/
+  padding: 32px 23px;
+  text-align: center;
+  background: #1d1c19;
+  border-bottom: 2px solid #f7dd43;
+  border-radius: 6px;
+}
+.card h2 {
+  /*estilizacao do texto dentro do card*/
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 8px 16px;
+  border: 1px solid #746615;
+  border-radius: 6px;
 }
