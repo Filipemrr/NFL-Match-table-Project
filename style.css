@@ -19,6 +19,10 @@ body {
   background-position-x: center;
   background-position-y: 55.6%;
 }
+body * {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
 #app {
   /* essa eh a div com id "app". que eh a div
   que contem todas as informacoes*/
@@ -28,12 +32,17 @@ body {
 header {
   /*contem a logo*/
   margin-bottom: 63px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .card {
   /*contem apenas o bloco das informacoes da partida
   como dia hora e as bandeiras*/
   padding: 32px 23px;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   background: #1d1c19;
   border-bottom: 2px solid #f7dd43;
   border-radius: 6px;
@@ -41,18 +50,49 @@ header {
 .card h2 {
   /*estilizacao do texto dentro do card*/
   display: flex;
-  justify-content: center;
   gap: 16px;
-  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+
+  padding: 6px 16px;
   border: 1px solid #746615;
   border-radius: 6px;
-  color: white;
+
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 53px;
+
+  color: #f7dd43;
 }
-ul {
+.card h2 span {
   color: white;
+  font-size: 14px;
+  text-transform: uppercase;
 }
-li {
+
+.card ul {
+  /*pego toda a lista de cards
+  e libero a diponibilidade comn "flex" 
+  */
   display: flex;
+  flex-direction: column; /*disponho a lista de cards em modo coluna*/
+  gap: 24px; /*coloco um gap entre os card*/
+  width: 270px; /*ajusto a largura da caixa*/
+}
+.card ul li {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 22px;
+}
+.card ul li + li {
+  /*eu chamo todos os cards que tem 
+  um card anterior a ele tambem */
+  padding-top: 24px;
+  border-top: 1px solid #323238;
+}
+.card ul li strong {
+  display: flex;
+  font-weight: 900;
+  font-size: 36px;
+  color: #e1e1e6;
 }
