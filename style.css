@@ -46,4 +46,13 @@ header {
   padding: 8px 16px;
   border: 1px solid #746615;
   border-radius: 6px;
+  color: white;
+}
+ul {
+  color: white;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
 }
