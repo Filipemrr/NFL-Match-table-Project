@@ -17,7 +17,7 @@ body {
   background-color: #121214;
   background-image: url(./assets/bg.svg);
   background-position-x: center;
-  background-position-y: 55.6%;
+  background-position-y: -715px;
 }
 body * {
   font-family: "Roboto", sans-serif;
@@ -32,9 +32,7 @@ body * {
 header {
   /*contem a logo*/
   margin-bottom: 63px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 .card {
   /*contem apenas o bloco das informacoes da partida
