@@ -34,6 +34,11 @@ header {
   margin-bottom: 63px;
   text-align: center;
 }
+#cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
 .card {
   /*contem apenas o bloco das informacoes da partida
   como dia hora e as bandeiras*/
