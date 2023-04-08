@@ -6,24 +6,14 @@
   box-sizing: border-box;
 }
 :root {
-  --card-color-primary: #f7dd43;
-  --card-title-border-color: #746615;
-  --card-bg-color: #1d1c19;
-  --bg: url(./assets/bg-yellow.svg);
-}
-
-body.blue {
   --card-color-primary: #338af3;
   --card-title-border-color: #338af3;
   --card-bg-color: #202024;
+  --navbar-tittle-color: #cfcfcf;
+  --navbar-border-color: #a71e1e;
   --bg: url(./assets/bg-blue.svg);
 }
-body.green {
-  --card-color-primary: #047c3f;
-  --card-title-border-color: #047c3f;
-  --card-bg-color: #1a1f1b;
-  --bg: url(./assets/bg-green.svg);
-}
+
 ul {
   list-style: none;
   /*nessa parte eu tiro todo os pontos que vem por padrao 
@@ -40,6 +30,30 @@ body * {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
 }
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--navbar-tittle-color);
+  border-bottom: 3px inset var(--navbar-border-color);
+}
+
+nav img {
+  height: 50px;
+}
+
+nav a {
+  background-color: #333;
+  color: var(--navbar-tittle-color);
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 #app {
   /* essa eh a div com id "app". que eh a div
   que contem todas as informacoes*/
@@ -49,8 +63,13 @@ body * {
 }
 header {
   /*contem a logo*/
-  margin-bottom: 63px;
-  text-align: center;
+  box-sizing: border-box;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #013369;
+  border-bottom: 3px inset var(--navbar-border-color);
 }
 #cards {
   display: flex;
@@ -122,13 +141,16 @@ header {
 
 .card h2:hover,
 .card ul li strong:hover,
-.card ul li img:hover {
+.card ul li img:hover,
+.navb:hover {
   /*efeito de aumento quando passa encima do icon*/
   transform: scale(1.1);
 }
+
 .card h2,
 .card ul li strong,
-.card ul li img {
+.card ul li img,
+.navb {
   /*suaviza a transicao quando passar encima do botao*/
   transition: transform 0.3s;
 }
