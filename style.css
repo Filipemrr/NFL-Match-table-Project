@@ -5,6 +5,25 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --card-color-primary: #f7dd43;
+  --card-title-border-color: #746615;
+  --card-bg-color: #1d1c19;
+  --bg: url(./assets/bg-yellow.svg);
+}
+
+body.blue {
+  --card-color-primary: #338af3;
+  --card-title-border-color: #338af3;
+  --card-bg-color: #202024;
+  --bg: url(./assets/bg-blue.svg);
+}
+body.green {
+  --card-color-primary: #047c3f;
+  --card-title-border-color: #047c3f;
+  --card-bg-color: #1a1f1b;
+  --bg: url(./assets/bg-green.svg);
+}
 ul {
   list-style: none;
   /*nessa parte eu tiro todo os pontos que vem por padrao 
@@ -14,10 +33,8 @@ ul {
 body {
   /*body eh a funcao que esta toda a pagina
   nesse caso uso ela para definir apenas as caracteristicas do fundo*/
-  background-color: #121214;
-  background-image: url(./assets/bg.svg);
-  background-position-x: center;
-  background-position-y: -715px;
+
+  background: #121214 var(--bg) no-repeat top center/cover;
 }
 body * {
   font-family: "Roboto", sans-serif;
@@ -27,7 +44,8 @@ body * {
   /* essa eh a div com id "app". que eh a div
   que contem todas as informacoes*/
   width: fit-content;
-  margin: 52px auto;
+  margin: auto;
+  padding-top: 52px;
 }
 header {
   /*contem a logo*/
@@ -44,10 +62,9 @@ header {
   como dia hora e as bandeiras*/
   padding: 32px 23px;
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  background: #1d1c19;
-  border-bottom: 2px solid #f7dd43;
+
+  background: var(--card-bg-color);
+  border-bottom: 2px solid var(--card-color-primary);
   border-radius: 6px;
 }
 .card h2 {
@@ -57,8 +74,8 @@ header {
   justify-content: center;
   align-items: center;
 
-  padding: 6px 16px;
-  border: 1px solid #746615;
+  padding: 8px 16px;
+  border: 1px solid var(--card-title-border-color);
   border-radius: 6px;
 
   width: fit-content;
@@ -94,8 +111,47 @@ header {
   border-top: 1px solid #323238;
 }
 .card ul li strong {
-  display: flex;
   font-weight: 900;
   font-size: 36px;
+  line-height: 125%;
+
   color: #e1e1e6;
+}
+
+/* TRANSICOES */
+
+.card h2:hover,
+.card ul li strong:hover,
+.card ul li img:hover {
+  /*efeito de aumento quando passa encima do icon*/
+  transform: scale(1.1);
+}
+.card h2,
+.card ul li strong,
+.card ul li img {
+  /*suaviza a transicao quando passar encima do botao*/
+  transition: transform 0.3s;
+}
+.card {
+  opacity: 0;
+  animation: appear 0.2s forwards;
+}
+@keyframes appear {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 700px) {
+  /* se a largura da pagina eh no minimo 700px ele 
+  aplica as seguintes alteraçoes:*/
+  #cards {
+    max-width: 670px;
+    flex-direction: row; /*dispoe os elementos em linha*/
+    flex-wrap: wrap;
+  }
 }
