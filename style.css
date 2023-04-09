@@ -7,7 +7,7 @@
 }
 :root {
   --card-color-primary: #338af3;
-  --card-title-border-color: #338af3;
+  --card-title-border-color: #d50a0a;
   --card-bg-color: #202024;
   --navbar-tittle-color: #cfcfcf;
   --navbar-border-color: #a71e1e;
@@ -30,7 +30,6 @@ body * {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
 }
-
 nav {
   display: flex;
   align-items: center;
@@ -40,16 +39,16 @@ nav {
 }
 
 nav img {
-  height: 50px;
+  height: 70px;
 }
 
 nav a {
   background-color: #333;
   color: var(--navbar-tittle-color);
   border: none;
-  padding: 10px 20px;
+  padding: 15px 25px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -64,7 +63,7 @@ nav a {
 header {
   /*contem a logo*/
   box-sizing: border-box;
-  height: 70px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -74,6 +73,8 @@ header {
 #cards {
   display: flex;
   flex-direction: column;
+  width: fit-content;
+  height: fit-content;
   gap: 32px;
 }
 .card {
@@ -171,7 +172,7 @@ header {
   /* se a largura da pagina eh no minimo 700px ele 
   aplica as seguintes alteraçoes:*/
   #cards {
-    max-width: 670px;
+    max-width: 1012px;
     flex-direction: row; /*dispoe os elementos em linha*/
     flex-wrap: wrap;
   }

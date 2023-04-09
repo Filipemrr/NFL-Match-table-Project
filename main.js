@@ -40,7 +40,7 @@ var times = [
   "cincinnati",
 
   "houston",
-  "indianopolis",
+  "indianapolis",
 
   "newyork",
   "miami",
@@ -69,10 +69,30 @@ var times = [
   "lions",
   "greenbay",
 ]
+var schedule = [
+  "4:30",
+  "8:15",
+  "1:00",
+  "1:00",
+  "1:00",
+  "1:00",
+  "1:00",
+  "1:00",
+  "1:00",
+  "1:00",
+  "4:25",
+  "4:25",
+  "4:25",
+  "4:25",
+  "4:25",
+  "8:20",
+]
+
 let dayOfWeek
 let dayOfMonth
+var j = 0
 var html = ""
-for (var i = 0; i < times.length - 1; i += 2) {
+for (var i = 0; i < times.length - 4; i += 1) {
   if (i < 4) {
     dayOfWeek = ["Saturday"]
     dayOfMonth = ["07/01"]
@@ -80,23 +100,32 @@ for (var i = 0; i < times.length - 1; i += 2) {
     dayOfWeek = ["Sunday"]
     dayOfMonth = ["08/01"]
   }
-  if (i < 4) {
+  if (i < 3) {
     html += createCard(
       dayOfMonth,
       dayOfWeek,
-      createGame(times[i], "16:00", times[i + 1])
+      createGame(times[i], schedule[j], times[i + 1]) +
+        createGame(times[i + 2], schedule[j + 1], times[i + 3])
     )
+    i += 3
+    j += 2
   } else {
     html += createCard(
       dayOfMonth,
       dayOfWeek,
-      createGame(times[i], "16:00", times[i + 1]) +
-        createGame(times[i + 2], "16:00", times[i + 3]) +
-        createGame(times[i + 4], "16:00", times[i + 5]) +
-        createGame(times[i + 6], "16:00", times[i + 7])
+      createGame(times[i], schedule[j], times[i + 1]) +
+        createGame(times[i + 2], schedule[j + 1], times[i + 3]) +
+        createGame(times[i + 4], schedule[j + 2], times[i + 5]) +
+        createGame(times[i + 6], schedule[j + 3], times[i + 7])
     )
-    i += 8
+    i += 7
+    j += 4
   }
 }
-
+html += createCard(
+  dayOfMonth,
+  dayOfWeek,
+  createGame(times[28], schedule[14], times[29]) +
+    createGame(times[30], schedule[15], times[31])
+)
 document.querySelector("#cards").innerHTML = html
